@@ -12,7 +12,7 @@ class ProductController extends Controller
     use ApiResponser;
     // index api retrive all product
     public function index(){
-        $product = Product::paginate(10);
+        $product = Product::with('category')->limit(30)->orderBy('id','desc')->get();
 
         return $this->successResponse($product, 'Retrive Product Successfully');
     }
