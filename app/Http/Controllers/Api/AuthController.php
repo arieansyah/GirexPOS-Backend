@@ -23,7 +23,7 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->successResponse('Validation Error.', $validator->errors());
+            return $this->errorResponse('Validation Error.', $validator->errors());
         }
 
         $credentials = $request->only('email', 'password');
@@ -38,4 +38,12 @@ class AuthController extends Controller
             return $this->errorResponse('Unauthorised.', ['error' => 'Unauthorised.']);
         }
     }
+
+    // logout Api with sunctum
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return $this->successResponse([], 'User logout successfully.');
+    }   
 }
