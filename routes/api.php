@@ -26,7 +26,13 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     // logout route
     Route::post('/logout', [App\Http\Controllers\Api\AuthController::class, 'logout']);
 
+    // products route
     Route::apiResource('products', App\Http\Controllers\Api\ProductController::class);
+
+    // masters route
     Route::apiResource('categories', App\Http\Controllers\Api\CategoryController::class);
+
+    // orders route
+    Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'store']);
 });
 // product api resource
