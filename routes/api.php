@@ -34,5 +34,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     // orders route
     Route::post('/orders', [App\Http\Controllers\Api\OrderController::class, 'store']);
+
+    // discounts route
+    Route::apiResource('discounts', App\Http\Controllers\Api\DiscountController::class);
 });
 // product api resource
