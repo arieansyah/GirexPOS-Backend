@@ -15,7 +15,7 @@ return new class extends Migration {
             // name
             $table->string('name');
             // description
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             // type
             $table->enum('type', ['percentage', 'fixed'])->default('percentage');
             $table->decimal('value', 10, 2);
