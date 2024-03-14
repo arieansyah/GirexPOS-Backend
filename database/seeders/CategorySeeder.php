@@ -14,17 +14,17 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $readCategories = Permission::create(['name' => 'read-categories']);
-        $addCategories = Permission::create(['name' => 'add-categories']);
-        $updateCategories = Permission::create(['name' => 'update-categories']);
-        $deleteCategories = Permission::create(['name' => 'delete-categories']);
+        $read = Permission::create(['name' => 'read-categories']);
+        $add = Permission::create(['name' => 'add-categories']);
+        $update = Permission::create(['name' => 'update-categories']);
+        $delete = Permission::create(['name' => 'delete-categories']);
 
         $role = Role::where('name', 'super-admin')->first();
         $role->givePermissionTo([
-            $readCategories,
-            $addCategories,
-            $updateCategories,
-            $deleteCategories
+            $read,
+            $add,
+            $update,
+            $delete
         ]);
 
         \App\Models\Backend\Master\Category::factory(10)->create();

@@ -92,7 +92,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::with('roles')->find($id);
-        $image = $this->showAvatarInUploadContainer($user->photo);
+        // $image = $this->showAvatarInUploadContainer($user->photo);
 
         $links = json_decode($user->links);
         $roles = $this->roleService->roles();
@@ -101,7 +101,6 @@ class UserController extends Controller
             'backend.users.edit',
             compact(
                 'user',
-                'image',
                 'links',
                 'roles'
             )
@@ -161,4 +160,3 @@ class UserController extends Controller
         }
     }
 }
-

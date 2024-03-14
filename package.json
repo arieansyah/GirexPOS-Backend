@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "jquery": "^3.7.1",
+        "jquery-ui": "^1.13.2",
         "laravel-datatables-vite": "^0.5.2",
         "lodash": "^4.17.21",
         "sweetalert2": "^11.6.13",

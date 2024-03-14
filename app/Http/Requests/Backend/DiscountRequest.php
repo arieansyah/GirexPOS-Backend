@@ -27,7 +27,7 @@ class DiscountRequest extends FormRequest
             'description' => ['nullable', 'string'],
             // 'type' => ['nullable', Rule::in(['percentage', 'fixed'])],
             'type' => ['nullable'],
-            'value' => ['required', 'numeric'],
+            'value' => ['required', 'string'],
             // 'status' => [Rule::in(['active', 'inactive'])],
             'status' => ['nullable'],
             'expired_date' => ['nullable', 'string'],

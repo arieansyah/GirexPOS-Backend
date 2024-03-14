@@ -36,13 +36,13 @@
                         <p>Category</p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="{{ route('role.index') }}"
-                        class="nav-link @if (in_array(Request::segment(2), ['role'])) active @endif">
+                <li class="nav-item">
+                    <a href="{{ route('discounts.index') }}"
+                        class="nav-link @if (in_array(Request::segment(2), ['discounts'])) active @endif">
                         <i class="nav-icon bi bi-circle"></i>
-                        <p>Role</p>
+                        <p>Discount</p>
                     </a>
-                </li> --}}
+                </li>
             </ul>
         </li>
 

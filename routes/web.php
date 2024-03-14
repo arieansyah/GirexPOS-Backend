@@ -37,8 +37,9 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('products', \App\Http\Controllers\Backend\ProductController::class);
-    
+
     Route::prefix('masters')->group(function () {
+        Route::resource('discounts', \App\Http\Controllers\Backend\Master\DiscountController::class);
         Route::resource('categories', \App\Http\Controllers\Backend\Master\CategoryController::class);
     });
 });
